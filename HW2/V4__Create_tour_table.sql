@@ -1,9 +1,9 @@
 CREATE TABLE tour(
                      tour_id serial PRIMARY KEY,
-                     type_of_meal_id INT ,
-                     hotel_id INT ,
-                     tour VARCHAR(255) NOT NULL,
-                     cost INT NOT NULL,
+                     type_of_meal_id INT not null,
+                     hotel_id INT not null,
+                     tour VARCHAR(255) NOT NULL CHECK (char_length(tour) >1 ),
+                     cost INT NOT NULL check (cost >= 0),
                      departure_date CHAR(15) NOT NULL,
                      departure_city VARCHAR (255) NOT NULL,
                      adult_kids CHAR(10) NOT NULL,
