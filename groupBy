@@ -1,0 +1,9 @@
+SELECT employee.full_name, count(sale) FROM employee
+JOIN sale on sale.employee_id = employee.employee_id
+GROUP BY employee.full_name;
+
+SELECT hotel.hotel_name, max(category) FROM hotel
+JOIN hotel_chain_hotel on hotel_chain_hotel.hotel_id = hotel.hotel_id
+GROUP BY hotel.hotel_name
+ORDER BY 2 DESC;
+
